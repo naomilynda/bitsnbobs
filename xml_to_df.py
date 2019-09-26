@@ -63,6 +63,6 @@ parent_tag = 'item'
 
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'xml')
-parse_entries(soup.find_all('item'),l)
+parse_entries(soup.find_all(parent_tag),l)
 
 df = pd.DataFrame(l)
